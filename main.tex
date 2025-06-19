@@ -224,11 +224,23 @@ Esta revisão sistemática investiga o panorama dos mecanismos de segurança e d
 %=======================================================================
 \chapter{Introduction}
 
-The progressive integration of Artificial Intelligence (AI) into critical infrastructure domains and essential spheres of human activity—spanning from the financial sector, with its algorithmic trading and fraud detection systems, to healthcare, where it assists in complex diagnoses and treatment personalization, through autonomous vehicles, which promise to revolutionize urban mobility and logistics, and extending to cybersecurity itself, where it is employed to identify and mitigate digital threats—has reconfigured the global technological landscape. As these AI systems, characterized by growing autonomy and the capacity to make high-impact decisions with minimal human intervention, become increasingly prevalent, their robustness, reliability, and security emerge not just as technical requirements, but as central concerns of an ethical, economic, and social order. The inherent complexity of the most advanced AI models, such as deep neural networks, which often operate under the "black-box" paradigm due to the difficulty in fully auditing and interpreting their internal decision-making processes, engenders a unique and constantly expanding attack surface. This opacity is astutely exploited by a diverse spectrum of adversaries, whose motivations range from financial gain and industrial espionage to cyberterrorism and sociopolitical destabilization, with the intent of manipulating the models' behavior, extracting confidential and sensitive information, or inducing instability in critical systems and processes. This dynamic and challenging scenario creates a true and continuous race in the digital domain: while new, more powerful, and capable AI architectures are developed and implemented, new and often unforeseen vulnerabilities are concurrently discovered and exploited, demanding an incessant and proactive effort in developing and adapting increasingly sophisticated and resilient defense mechanisms. In this context, the security of AI systems is established as an absolutely essential and non-negotiable pillar for the safe, responsible, and ethical adoption of these transformative technologies.
+The progressive integration of Artificial Intelligence (AI) into critical infrastructure domains and essential spheres of human activity has reshaped the global technological landscape \cite{Russell2022}. This transformation spans from the financial sector, with its algorithmic trading systems and fraud detection \cite{Henrique2019}, to healthcare, where it assists in complex diagnoses and treatment personalization \cite{Rajpurkar2017, Chen2020}, to autonomous vehicles, which promise to revolutionize urban mobility and logistics \cite{Grigorescu2020}, and even to cybersecurity itself, where it is used to identify and mitigate digital threats \cite{Russell2022}.
 
-The threats looming over the security of AI systems comprise a vast and heterogeneous spectrum, extending considerably beyond the vulnerabilities traditionally associated with conventional software. Attacks can manifest in multiple and distinct phases of a machine learning (ML) model's lifecycle, from the initial stage of data collection and curation, through the model's learning and optimization process, to the inference phase, when the model is effectively deployed and used in production to make decisions or predictions. These attacks, and other emerging ones, target a diverse set of malicious objectives, including but not limited to, the exfiltration of sensitive and proprietary data, the systematic deception of the model to induce it into erroneous classifications with potentially severe consequences, and the widespread destabilization of systems and infrastructures that critically depend on automated and precise decisions provided by AI. A thorough and detailed understanding of these attack vectors, their technical nuances, and their underlying objectives constitutes the first and indispensable step towards developing and implementing effective and robust countermeasures. Consequently, the field of AI security research is experiencing a moment of effervescence and intense activity, with the global scientific community engaged in a dual effort: on one hand, to proactively identify and characterize emerging vulnerabilities, and on the other, to propose and validate more intrinsically robust model architectures and innovative, adaptive defense techniques.
+As these AI systems, characterized by increasing autonomy and the ability to make high-impact decisions with minimal human intervention, become more prevalent, their robustness, reliability, and security emerge not only as technical requirements but as central ethical, economic, and social concerns \cite{Bommasani2021}. The inherent complexity of the most advanced AI models, such as deep neural networks \cite{Hinton2006}, which often operate as 'black boxes' due to the difficulty of fully auditing and interpreting their internal decision-making processes, creates a unique and ever-expanding attack surface \cite{Papernot2018}.
 
-The domain of Artificial Intelligence security is, undeniably, in a state of rapid and continuous expansion, evidenced by an exponentially growing volume of scientific publications, patents, and research initiatives each year. This proliferation of knowledge, while intrinsically positive and indicative of the area's vitality and relevance, concurrently imposes a considerable challenge for researchers, developers, industry professionals, and policymakers, who strive to stay updated on the latest trends, the most critical and relevant threats, and the most promising and effective defense strategies. The pertinent scientific literature is often scattered across a myriad of specialized conferences and journals from various fields (computer science, engineering, statistics, ethics), often lacking a comprehensive and systematic synthesis that organizes, categorizes, and consolidates the most recent and significant findings in an accessible and integrated manner. Given this landscape, conducting a systematic literature review (SLR) is fully justified by the pressing need to map the current state of AI security research in a rigorous, transparent, and replicable way. By addressing specific research questions and applying a robust methodological protocol, this study has the potential to offer valuable contributions: firstly, to consolidate existing knowledge, providing a panoramic, comprehensive, and structured overview of the predominant attack types, proposed defense mechanisms, and employed evaluation metrics; secondly, to identify emerging and consolidated trends by analyzing the evolution of academic and industrial interest in the topic and highlighting areas of particular relevance; thirdly, to support researchers and new entrants in the field by providing a solid and well-founded starting point for future investigations, highlighting what has already been established; and finally, to guide industry professionals and developers by presenting actionable insights into the most critical vulnerabilities and the protection strategies that must be considered and prioritized in the development, deployment, and maintenance lifecycle of secure and reliable AI systems. Thus, this research will systematically organize and analyze the primary evidence published in the prolific period between 2020 and 2025, providing a valuable and updated resource.
+This opacity makes AI models particularly vulnerable to perturbations—small modifications that are almost imperceptible to the human eye but can result in incorrect classifications with high confidence. Such perturbations not only reveal structural flaws in generalization mechanisms but also demonstrate a surprising ability to transfer between different models, even those trained with different architectures or datasets \cite{Szegedy2014, Goodfellow2015}. These findings show that current systems, although effective under normal conditions, can be led to incorrect behaviors, posing a concrete risk to applications that require reliability, robustness, and predictability in sensitive or mission-critical environments. This dynamic and challenging landscape creates a continuous arms race in the digital domain: as new, more powerful, and capable AI architectures are developed and implemented \cite{Vaswani2017, OpenAI2023}, new—often unforeseen—vulnerabilities are simultaneously discovered and exploited, demanding an incessant and proactive effort in the development and adaptation of increasingly sophisticated and resilient defense mechanisms \cite{Madry2018, Cohen2019}. In this context, the security of AI systems is established as an absolutely essential and non-negotiable pillar for the safe, responsible, and ethical adoption of these transformative technologies \cite{NIST2024}.
+
+The threats to the security of AI systems encompass a vast and heterogeneous spectrum, extending considerably beyond the vulnerabilities traditionally associated with conventional software \cite{Anderson2020}. Attacks can manifest in multiple and distinct phases of the machine learning (ML) model lifecycle, from the initial stage of data collection and curation, through the model's learning and optimization process, to the inference phase, when the model is effectively deployed and used in production to make decisions or predictions \cite{Papernot2018}.
+
+These attacks target a diverse set of malicious objectives, including, but not limited to, the exfiltration of sensitive and proprietary data through model extraction attacks \cite{Tramer2016}, the systematic deception of the model to induce it into erroneous classifications with potentially severe consequences through adversarial attacks \cite{Carlini2017}, the violation of privacy through membership inference attacks \cite{Shokri2017}, and the widespread destabilization of systems through data poisoning \cite{Biggio2012, Gu2017}.
+
+A deep and detailed understanding of these attack vectors, their technical nuances, and underlying objectives is the first and indispensable step for the development and implementation of effective and robust countermeasures. Consequently, the field of AI security research is experiencing a moment of effervescence and intense activity, with the global scientific community engaged in a dual effort: on the one hand, to proactively identify and characterize emerging vulnerabilities; on the other, to propose and validate intrinsically more robust model architectures, as well as innovative and adaptive defense techniques, including adversarial training \cite{Zhang2019}, differential privacy \cite{Abadi2016}, and anomaly detection methods \cite{Ma2018}.
+
+The domain of Artificial Intelligence security is undeniably in a state of rapid and continuous expansion, evidenced by the exponentially growing volume of scientific publications, patents, and research initiatives each year. This proliferation of knowledge, while intrinsically positive and indicative of the area's vitality and relevance, simultaneously poses a considerable challenge for researchers, developers, industry professionals, and policymakers, who strive to stay up-to-date with the latest trends, the most critical and relevant threats, and the most promising and effective defense strategies.
+
+The relevant scientific literature is often scattered across a myriad of specialized conferences and journals from various fields (computer science, engineering, statistics, ethics), often lacking a comprehensive and systematic synthesis that organizes, categorizes, and consolidates the most recent and significant findings in an accessible and integrated manner. In this scenario, conducting a systematic literature review (SLR) is fully justified by the pressing need to map the current state of AI security research in a rigorous, transparent, and replicable way, following established methodologies \cite{Kitchenham2007, Petersen2008}.
+
+By answering specific research questions and applying a robust methodological protocol, this study has the potential to offer valuable contributions: first, to consolidate existing knowledge, providing a panoramic, comprehensive, and structured overview of the predominant types of attacks, proposed defense mechanisms, and evaluation metrics used; second, to identify emerging and consolidated trends by analyzing the evolution of academic and industrial interest in the topic and highlighting areas of special relevance; third, to support researchers and newcomers to the field by offering a solid and well-founded starting point for future investigations, showcasing what has already been established; and finally, to guide industry professionals and developers by presenting practical insights into the most critical vulnerabilities and protection strategies that should be considered and prioritized in the development, deployment, and maintenance of secure and reliable AI systems.
 
 %=======================================================================
 % Referencial Teórico
@@ -313,6 +325,8 @@ The study selection process will be conducted in three stages:
 After the final selection, relevant data will be extracted and recorded in a structured spreadsheet. For each included study, information such as the type of attack investigated, attack objectives, proposed defense mechanisms, evaluation metrics, and year of publication will be collected.
 
 The data synthesis will be performed narratively, organizing and categorizing the findings according to the central themes of the research questions (RQ1 to RQ4). For RQ5, a quantitative analysis of the temporal distribution of publications will be conducted to identify growth patterns in scientific production related to AI security.
+
+%=======================================================================
 
 
 %=======================================================================
@@ -417,35 +431,35 @@ The six-month duration provides adequate buffer time for thorough execution of e
 %A Figura~\ref{fig:escrita} ilustra as fases psicológicas da escrita da dissertação, que também valem para monografia. Você vai se reconhecer no personagem. ;-)
 
 %\begin{figure}
-%	\caption{Fases psicológicas da escrita da dissertação}
-%	\label{fig:escrita}
-%	\centering%
-%	\begin{minipage}{.8\textwidth}
-%		\includegraphics[width=\textwidth]{images/escrita.jpg}
-%		\fonte{http://www.phdcomics.com/comics/archive.php?comicid=149}
-%	\end{minipage}
+%   \caption{Fases psicológicas da escrita da dissertação}
+%   \label{fig:escrita}
+%   \centering%
+%   \begin{minipage}{.8\textwidth}
+%       \includegraphics[width=\textwidth]{images/escrita.jpg}
+%       \fonte{http://www.phdcomics.com/comics/archive.php?comicid=149}
+%   \end{minipage}
 %\end{figure}
 
 %\subsection{Tabelas}
 %A Tabela~\ref{tab:estacoes} é um exemplo de tabela elaborada pelo(a) próprio(a) autor(a).
 
 %\begin{table}
-%	\caption{Período das estações do ano no Brasil}
-%	\label{tab:estacoes}
-%	\centering%
-%	\begin{minipage}{.6\textwidth}
-%		\begin{tabular*}{\textwidth}{ll}
-%			\hline
-%			\textbf{Meses} & \textbf{Estações do Ano}\\
-%			\hline
-%			21 de março a 21 de junho & Outono\\
-%			21 de junho a 23 de setembro & Inverno\\
-%			23 de setembro a 21 de dezembro & Primavera\\
-%			21 de dezembro a 21 de março & Verão\\
-%			\hline
-%		\end{tabular*}
-%		\fonte{Elaborada pela autora.}
-%	\end{minipage}
+%   \caption{Período das estações do ano no Brasil}
+%   \label{tab:estacoes}
+%   \centering%
+%   \begin{minipage}{.6\textwidth}
+%       \begin{tabular*}{\textwidth}{ll}
+%           \hline
+%           \textbf{Meses} & \textbf{Estações do Ano}\\
+%           \hline
+%           21 de março a 21 de junho & Outono\\
+%           21 de junho a 23 de setembro & Inverno\\
+%           23 de setembro a 21 de dezembro & Primavera\\
+%           21 de dezembro a 21 de março & Verão\\
+%           \hline
+%       \end{tabular*}
+%       \fonte{Elaborada pela autora.}
+%   \end{minipage}
 %\end{table}
 
 %\section{Resumo}
@@ -453,10 +467,10 @@ The six-month duration provides adequate buffer time for thorough execution of e
 
 %Sugestão (uma a três linhas para cada item):
 %\begin{itemize}
-%	\item Contexto geral e específico;
-%	\item Questão/problema sendo investigado (propósito do trabalho);
-%	\item Estado-da-arte (por que precisa de uma solução nova/melhor);
-%	\item Solução (nome da proposta, metodologia básica sem detalhes, quais características respondem as questões iniciais, interpretação dos resultados, conclusões).
+%   \item Contexto geral e específico;
+%   \item Questão/problema sendo investigado (propósito do trabalho);
+%   \item Estado-da-arte (por que precisa de uma solução nova/melhor);
+%   \item Solução (nome da proposta, metodologia básica sem detalhes, quais características respondem as questões iniciais, interpretação dos resultados, conclusões).
 %\end{itemize}
 
 
