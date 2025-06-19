@@ -224,11 +224,11 @@ Esta revisão sistemática investiga o panorama dos mecanismos de segurança e d
 %=======================================================================
 \chapter{Introduction}
 
-The progressive integration of Artificial Intelligence (AI) into critical infrastructure domains and essential spheres of human activity has reshaped the global technological landscape \cite{Russell2022}. This transformation spans from the financial sector, with its algorithmic trading systems and fraud detection \cite{Henrique2019}, to healthcare, where it assists in complex diagnoses and treatment personalization \cite{Rajpurkar2017, Chen2020}, to autonomous vehicles, which promise to revolutionize urban mobility and logistics \cite{Grigorescu2020}, and even to cybersecurity itself, where it is used to identify and mitigate digital threats \cite{Russell2022}.
+The progressive integration of Artificial Intelligence (AI) into critical infrastructure domains and essential spheres of human activity has reshaped the global technological landscape \cite{Russell2022}. This transformation spans from the financial sector, with its algorithmic trading systems and fraud detection \cite{Henrique2019}, to healthcare, where it assists in complex diagnoses and treatment personalization \cite{Rajpurkar2017, Chen2018}, to autonomous vehicles, which promise to revolutionize urban mobility and logistics \cite{Grigorescu2019}, and even to cybersecurity itself, where it is used to identify and mitigate digital threats \cite{Russell2022}.
 
 As these AI systems, characterized by increasing autonomy and the ability to make high-impact decisions with minimal human intervention, become more prevalent, their robustness, reliability, and security emerge not only as technical requirements but as central ethical, economic, and social concerns \cite{Bommasani2021}. The inherent complexity of the most advanced AI models, such as deep neural networks \cite{Hinton2006}, which often operate as 'black boxes' due to the difficulty of fully auditing and interpreting their internal decision-making processes, creates a unique and ever-expanding attack surface \cite{Papernot2018}.
 
-This opacity makes AI models particularly vulnerable to perturbations—small modifications that are almost imperceptible to the human eye but can result in incorrect classifications with high confidence. Such perturbations not only reveal structural flaws in generalization mechanisms but also demonstrate a surprising ability to transfer between different models, even those trained with different architectures or datasets \cite{Szegedy2014, Goodfellow2015}. These findings show that current systems, although effective under normal conditions, can be led to incorrect behaviors, posing a concrete risk to applications that require reliability, robustness, and predictability in sensitive or mission-critical environments. This dynamic and challenging landscape creates a continuous arms race in the digital domain: as new, more powerful, and capable AI architectures are developed and implemented \cite{Vaswani2017, OpenAI2023}, new—often unforeseen—vulnerabilities are simultaneously discovered and exploited, demanding an incessant and proactive effort in the development and adaptation of increasingly sophisticated and resilient defense mechanisms \cite{Madry2018, Cohen2019}. In this context, the security of AI systems is established as an absolutely essential and non-negotiable pillar for the safe, responsible, and ethical adoption of these transformative technologies \cite{NIST2024}.
+This opacity makes AI models particularly vulnerable to perturbations—small modifications that are almost imperceptible to the human eye but can result in incorrect classifications with high confidence. Such perturbations not only reveal structural flaws in generalization mechanisms but also demonstrate a surprising ability to transfer between different models, even those trained with different architectures or datasets \cite{Szegedy2014, Goodfellow2014}. These findings show that current systems, although effective under normal conditions, can be led to incorrect behaviors, posing a concrete risk to applications that require reliability, robustness, and predictability in sensitive or mission-critical environments. This dynamic and challenging landscape creates a continuous arms race in the digital domain: as new, more powerful, and capable AI architectures are developed and implemented \cite{Vaswani2017, OpenAI2023}, new—often unforeseen—vulnerabilities are simultaneously discovered and exploited, demanding an incessant and proactive effort in the development and adaptation of increasingly sophisticated and resilient defense mechanisms \cite{Madry2017, Cohen2019}. In this context, the security of AI systems is established as an absolutely essential and non-negotiable pillar for the safe, responsible, and ethical adoption of these transformative technologies \cite{NIST2024}.
 
 The threats to the security of AI systems encompass a vast and heterogeneous spectrum, extending considerably beyond the vulnerabilities traditionally associated with conventional software \cite{Anderson2020}. Attacks can manifest in multiple and distinct phases of the machine learning (ML) model lifecycle, from the initial stage of data collection and curation, through the model's learning and optimization process, to the inference phase, when the model is effectively deployed and used in production to make decisions or predictions \cite{Papernot2018}.
 
@@ -240,7 +240,7 @@ The domain of Artificial Intelligence security is undeniably in a state of rapid
 
 The relevant scientific literature is often scattered across a myriad of specialized conferences and journals from various fields (computer science, engineering, statistics, ethics), often lacking a comprehensive and systematic synthesis that organizes, categorizes, and consolidates the most recent and significant findings in an accessible and integrated manner. In this scenario, conducting a systematic literature review (SLR) is fully justified by the pressing need to map the current state of AI security research in a rigorous, transparent, and replicable way, following established methodologies \cite{Kitchenham2007, Petersen2008}.
 
-By answering specific research questions and applying a robust methodological protocol, this study has the potential to offer valuable contributions: first, to consolidate existing knowledge, providing a panoramic, comprehensive, and structured overview of the predominant types of attacks, proposed defense mechanisms, and evaluation metrics used; second, to identify emerging and consolidated trends by analyzing the evolution of academic and industrial interest in the topic and highlighting areas of special relevance; third, to support researchers and newcomers to the field by offering a solid and well-founded starting point for future investigations, showcasing what has already been established; and finally, to guide industry professionals and developers by presenting practical insights into the most critical vulnerabilities and protection strategies that should be considered and prioritized in the development, deployment, and maintenance of secure and reliable AI systems.
+By answering specific research questions and applying a robust methodological protocol, this study has the potential to offer valuable contributions: first, to consolidate existing knowledge, providing a panoramic, comprehensive, and structured overview of the predominant types of attacks, proposed defense mechanisms, and evaluation metrics used; second, to identify emerging and consolidated trends by analyzing the evolution of academic and industrial interest in the topic and highlighting areas of special relevance; third, to support researchers by offering a solid and well-founded starting point for future investigations, showcasing what has already been established; and finally, to guide industry professionals and developers by presenting practical insights into the most critical vulnerabilities and protection strategies that should be considered and prioritized in the development, deployment, and maintenance of secure and reliable AI systems.
 
 %=======================================================================
 % Referencial Teórico
@@ -249,6 +249,34 @@ By answering specific research questions and applying a robust methodological pr
 \chapter{Theoretical Framework}
 
 \section{Information Security}
+
+Information security constitutes a fundamental domain of computer science and systems engineering, establishing itself as an essential discipline for the protection of informational assets \cite{NIST2017}. The fundamental principles of information security, known as the CIA triad (Confidentiality, Integrity, and Availability), form the conceptual foundation upon which all modern security architecture is based \cite{Stallings2018}.
+
+\subsection{The CIA Triad}
+
+\subsubsection{Confidentiality}
+
+Confidentiality refers to the protection of information against unauthorized access, ensuring that only authorized entities can access sensitive data. This principle establishes that information must remain secret and protected against inappropriate disclosure, whether through access controls, encryption, or other protective measures \cite{NIST2017, Stallings2018}.
+
+\subsubsection{Integrity}
+
+Integrity ensures that information is not altered in an unauthorized manner, maintaining its accuracy, completeness, and authenticity throughout the entire data lifecycle. Integrity violations can result in corrupted data, decisions based on inaccurate information, and compromised system reliability \cite{Stallings2018}.
+
+\subsubsection{Availability}
+
+Availability guarantees that information and computational resources are accessible when needed by authorized users and systems, preventing interruptions that may impact critical operations \cite{Stallings2018}. As established by NIST \cite{NIST2017}, availability constitutes a critical element for business continuity and organizational operations.
+
+\subsection{Complementary Security Principles}
+
+Beyond the classic triad, other security principles complement the informational protection framework. Authenticity verifies the legitimate origin of information and user identity, ensuring that data and communications come from reliable sources. Non-repudiation prevents an entity from denying authorship of an action or transaction, providing irrefutable evidence of participation in digital processes. Auditability enables the tracking and monitoring of system activities, facilitating anomaly detection and security incident investigation \cite{Pfleeger2015, Stallings2018}. To ensure that these principles are effectively applied in complex and heterogeneous environments, it becomes necessary to adopt architectural strategies that integrate multiple security mechanisms in a coordinated manner.
+
+\subsection{Defense-in-Depth}
+
+The defense-in-depth paradigm emerges in this context as an approach that establishes multiple layers of protection distributed throughout the technological infrastructure, recognizing that no isolated security mechanism is infallible. This approach stratifies defenses at different levels, creating redundant barriers that significantly increase the cost and complexity for potential attackers. The effective implementation of this paradigm requires careful coordination among various protection mechanisms to avoid single points of failure \cite{Stallings2018}.
+
+\subsection{AI Security Challenges}
+
+The evolution of artificial intelligence systems introduces unique challenges that transcend traditional information security paradigms. In AI contexts, confidentiality faces threats such as inference attacks that can extract sensitive information from training data, while integrity can be compromised by adversarial manipulations in input data or poisoning during the training process. The availability of AI systems can be affected by attacks that exploit specific vulnerabilities of learning algorithms, requiring a reformulation of traditional protection strategies to contemplate the particular characteristics of systems based on intelligent models \cite{Papernot2018, Biggio2018}.
 
 \section{Artificial Intelligence}
 
@@ -495,7 +523,7 @@ The six-month duration provides adequate buffer time for thorough execution of e
 %=======================================================================
 % Referências
 %=======================================================================
-\bibliography{exemplo}
+\bibliography{refs}
 
 %=======================================================================
 % Exemplo de Apêndice
